@@ -29,9 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['isbn'])) {
     // Save updated books to JSON file
     if ($bookExists) {
         saveBooks($books);
+        echo "Deleted successfully";
         // Return success message as JSON
-        header('Content-Type: application/json');
-        echo json_encode(["message" => "Book deleted successfully"], JSON_PRETTY_PRINT);
+        // header('Content-Type: application/json');
+        // echo json_encode(["message" => "Book deleted successfully"], JSON_PRETTY_PRINT);
     } else {
         // Return error message if book with provided ISBN is not found
         http_response_code(404); // Not Found

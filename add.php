@@ -32,10 +32,11 @@
 
         // Save updated books to JSON file
         saveBooks($books);
+        echo "New Book Added Succesfully";
 
         // Return success message as JSON
-        header('Content-Type: application/json');
-        echo json_encode(["message" => "Book added successfully"], JSON_PRETTY_PRINT);
+        // header('Content-Type: application/json');
+        // echo json_encode(["message" => "Book added successfully"], JSON_PRETTY_PRINT);
     } else {
         // Handle invalid or missing form inputs
         http_response_code(400); // Bad Request
